@@ -5,12 +5,14 @@ print("Bem vindos ao meu projeto em Python para rolagem de dados em Dungeons and
 print("----------------------------------------------------------------------------------")
 print("\n")
 
-funcionando = True
+funcionando = True #cria o looping para iniciar o programa
 
 while funcionando == True:
     total = 0
     lados = "a"
     rolagens = "a"
+
+    #define as variáveis lados e rolagens como sentinela, para previnir que o usuário quebre o programa
 
     while lados.isnumeric() == False:
         lados = input("Quantos lados o dado tem? ")
@@ -32,13 +34,19 @@ while funcionando == True:
             rolagens = "a"
     rolagens = int(rolagens)
 
+    #cria o laço for para mostrar as rolagens de dados
     for x in range(rolagens):
        rolagens = random.randint (1,lados)
        total += rolagens
        print("Rolagem ", x+1, ": ", rolagens)
+       print("\n")
+    
+    #pergunta ao usuário se ele deseja ver a soma das rolagens que fez
+    ver_total = input("Deseja ver a soma dos dados (S/N)? ")
     print("Total: ", total)
     print("\n")
 
+    #pergunta ao usuário se ele deseja iniciar o looping novamente
     jogar_novamente = input("Deseja rolar novos dados (S/N)? ")
     if jogar_novamente.upper() == "N":
         funcionando = False
