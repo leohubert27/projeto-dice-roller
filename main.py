@@ -43,8 +43,9 @@ while funcionando == True:
     
     #pergunta ao usuário se ele deseja ver a soma das rolagens que fez
     ver_total = input("Deseja ver a soma dos dados (S/N)? ")
-    print("Total: ", total)
-    print("\n")
+    if ver_total.upper() == "S":
+        print("Soma total: ", total)
+        print("\n")
 
     #pergunta ao usuário se ele deseja iniciar o looping novamente
     jogar_novamente = input("Deseja rolar novos dados (S/N)? ")
